@@ -8,3 +8,16 @@
 3. YARN
 
 >  npm install -g create-react-app  
+
+
+## props validataion check
+
+> npm install --save prop-types   
+> yarn add prop-types 
+  
+## react life-cycle
+
+* Render
+> componentWillMount  -> render -> componentMount  
+* Update  
+> componentWillReceiveProps -> shouldComponentUpdate == true -> componentWillUpdate -> render -> componentDidUpdate
