@@ -21,7 +21,7 @@ class App extends Component {
   
   componentDidMount(){
     //console.log('did mount third');
-    this._getMovies(1);
+    //this._getMovies(1);
     //window.addEventListener("scroll", this.handleScroll);
   }
 
@@ -86,7 +86,7 @@ class App extends Component {
     const { movies }= this.state;
     return (
       <InfiniteScroll
-        pageStart={1}
+        pageStart={0}
         loadMore={this._getMovies.bind(this)}
         hasMore={true || false}
       
