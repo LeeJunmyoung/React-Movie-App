@@ -10,8 +10,8 @@ class App extends Component {
 
   
   state={
-    beforeMovies:[]
-    
+    beforeMovies:[],
+   
   }
 
   componentWillMount(){
@@ -29,12 +29,14 @@ class App extends Component {
     
     const movies = await this._callApi(page);
     const beforeMovies= this.state.movies;
-    //const page = parseInt(this.state.page)+1;
+  
     let viewMovies
-    if(page>1)
-    viewMovies = [].concat(beforeMovies).concat(movies);
-    else
+    
+    if(beforeMovies===undefined)
     viewMovies = movies;
+    else
+    viewMovies = [].concat(beforeMovies).concat(movies);
+    
     
     return this.setState({
       movies : viewMovies,
