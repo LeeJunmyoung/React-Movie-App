@@ -1,29 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
 
-function Movie({title,image}){
+function Movie({title,image,genres,synopsis}){
     return(
-        <div>
-            <MoviePoster image={image}/>
-            <h1>{title}</h1>
+        <div className="Movie">
+            <div className="Movie__Columns">
+                <MoviePoster image={image} alt={title}/>
+            </div>
+            <div className="Movie__Columns">
+                <h1>{title}</h1>
+                <div className="Movie__Genes">
+                    {genres.map( (genre,index)=> <MovieGenre genre={genre} key={index} /> )}
+                </div>
+                <p className="Movvie__Synopsis">
+                    {synopsis}
+                </p>
+            </div>
         </div>
     );
 }
 
 
-function MoviePoster({image}){
+function MoviePoster({image,alt}){
     return(
-        <img src={image} alt="Movie Poster" />
+        <img src={image} alt={alt} className="Movie__Poster" />
     )
     
 }
+
+function MovieGenre({genre}){
+    return(
+        <span className="Movie__genre">{genre} </span>
+    )
+}
+
+
 MoviePoster.propTypes ={
     image :  PropTypes.string.isRequired
 }
  Movie.propTypes ={
     title :  PropTypes.string.isRequired,
-    image :  PropTypes.string.isRequired
+    image :  PropTypes.string.isRequired,
+    genres:  PropTypes.string.isRequired,
+    synopsis:PropTypes.string.isRequired
+}
+
+MovieGenre.prototype={
+    genres:  PropTypes.string.isRequired  
 }
 
 
