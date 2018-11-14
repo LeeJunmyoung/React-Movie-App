@@ -21,3 +21,10 @@
 > componentWillMount  -> render -> componentMount  
 * Update  
 > componentWillReceiveProps -> shouldComponentUpdate == true -> componentWillUpdate -> render -> componentDidUpdate
+
+## react-lines-ellipsis  
+> yarn add react-lines-ellipsis  
+
+## react github 올리기  
+
+https://leejunmyoung.github.io/React-Movie-App/  
